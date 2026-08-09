@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skills | Sachin</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/skills.css') }}">
+</head>
+
+<body>
+<canvas id="contactCanvas"></canvas>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="/" class="logo">
+            <span>&lt;</span> Sachin <span>/&gt;</span>
+        </a>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/skills" class="active">Skills</a>
+            <a href="/projects">Projects</a>
+            <a href="/certifications">Certifications</a>
+            <a href="/experience">Experience</a>
+            <a href="/contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <main class="skills-page">
+
+        <section class="skills-header">
+
+            <p class="terminal-line">
+                &gt; cat skills.txt
+            </p>
+
+            <h1>
+                My <span>Skills</span>
+            </h1>
+
+            <p class="subtitle">
+                Technologies, tools and security areas that I am
+                learning and working with.
+            </p>
+
+        </section>
+
+
+        <!-- ================= SKILL CARDS ================= -->
+
+        <section class="skills-grid">
+
+
+            <!-- CYBERSECURITY -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    &lt;/&gt;
+                </div>
+
+                <h2>Cybersecurity</h2>
+
+                <p>
+                    Security concepts and practical cybersecurity
+                    techniques.
+                </p>
+
+                <div class="skill-list">
+
+                    <span>Penetration Testing</span>
+                    <span>Vulnerability Assessment</span>
+                    <span>Web Security</span>
+                    <span>Ethical Hacking</span>
+                    <span>Security Testing</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- NETWORKING -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ◉
+                </div>
+
+                <h2>Networking</h2>
+
+                <p>
+                    Understanding network communication,
+                    protocols and security.
+                </p>
+
+                <div class="skill-list">
+
+                    <span>TCP/IP</span>
+                    <span>OSI Model</span>
+                    <span>DNS</span>
+                    <span>HTTP / HTTPS</span>
+                    <span>Network Security</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRAMMING -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    { }
+                </div>
+
+                <h2>Programming</h2>
+
+                <p>
+                    Programming languages and frameworks used
+                    for development and security projects.
+                </p>
+
+                <div class="skill-list">
+
+                    <span>Python</span>
+                    <span>JavaScript</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Flask</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- LINUX -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    $_
+                </div>
+
+                <h2>Linux</h2>
+
+                <p>
+                    Working with Linux environments and
+                    command-line tools.
+                </p>
+
+                <div class="skill-list">
+
+                    <span>Kali Linux</span>
+                    <span>Linux CLI</span>
+                    <span>Bash</span>
+                    <span>File Permissions</span>
+                    <span>System Administration</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SECURITY TOOLS -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ⚙
+                </div>
+
+                <h2>Security Tools</h2>
+
+                <p>
+                    Tools used for security testing, analysis
+                    and reconnaissance.
+                </p>
+
+                <div class="skill-list">
+
+                    <span>Burp Suite</span>
+                    <span>Nmap</span>
+                    <span>Wireshark</span>
+                    <span>Metasploit</span>
+                    <span>Git / GitHub</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- IOT -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ⌁
+                </div>
+
+                <h2>IoT & Hardware</h2>
+
+                <p>
+                    Building and experimenting with embedded
+                    systems and connected devices.
+                </p>
+
+                <div class="skill-list">
+
+                    <span>Arduino</span>
+                    <span>ESP / Microcontrollers</span>
+                    <span>Bluetooth HC-05</span>
+                    <span>IoT Security</span>
+                    <span>Electronics</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CURRENT LEARNING ================= -->
+
+        <section class="learning">
+
+            <p class="terminal-line">
+                &gt; currently_learning
+            </p>
+
+            <h2>
+                Currently <span>Learning</span>
+            </h2>
+
+            <div class="learning-items">
+
+                <div>
+                    <strong>01</strong>
+                    <p>Advanced Web Application Security</p>
+                </div>
+
+                <div>
+                    <strong>02</strong>
+                    <p>Penetration Testing</p>
+                </div>
+
+                <div>
+                    <strong>03</strong>
+                    <p>Network Security</p>
+                </div>
+
+                <div>
+                    <strong>04</strong>
+                    <p>Cybersecurity Certifications</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/skills.js') }}"></script>
+
+</body>
+
+</html>

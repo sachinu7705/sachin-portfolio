@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Sachin</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/contact.css') }}">
+
+</head>
+
+<body>
+
+<!-- CONTACT PAGE BACKGROUND -->
+<canvas id="contactCanvas"></canvas>
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<header class="navbar">
+
+    <a href="/" class="logo">
+        <span>&lt;</span> Sachin <span>/&gt;</span>
+    </a>
+
+
+    <nav>
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+        <a href="/skills">
+            Skills
+        </a>
+
+        <a href="/projects">
+            Projects
+        </a>
+
+        <a href="/certifications">
+            Certifications
+        </a>
+
+        <a href="/experience">
+            Experience
+        </a>
+
+        <a href="/contact" class="active">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     CONTACT PAGE
+========================== -->
+
+<main class="contact-page">
+
+
+    <!-- HEADER -->
+
+    <section class="contact-header">
+
+        <p class="terminal">
+            &gt; ./contact_sachin.sh
+        </p>
+
+        <h1>
+            Let's <span>Connect</span>
+        </h1>
+
+        <p>
+            Interested in collaboration, internships,
+            projects, or discussing technology?
+            Feel free to get in touch.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT CONTENT
+    ========================== -->
+
+    <section class="contact-content">
+
+
+        <!-- =========================
+             CONTACT INFORMATION
+        ========================== -->
+
+        <div class="contact-info">
+
+
+            <!-- EMAIL -->
+
+            <div class="info-card">
+
+                <div class="icon">
+                    @
+                </div>
+
+                <div>
+
+                    <span>
+                        Email
+                    </span>
+
+                    <a href="mailto:sachinu0404@gmail.com">
+                        sachinu0404@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GITHUB -->
+
+            <div class="info-card">
+
+                <div class="icon">
+                    GH
+                </div>
+
+                <div>
+
+                    <span>
+                        GitHub
+                    </span>
+
+                    <a
+                        href="https://github.com/sachinu7705"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        github.com/sachinu7705
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LINKEDIN -->
+
+            <div class="info-card">
+
+                <div class="icon">
+                    IN
+                </div>
+
+                <div>
+
+                    <span>
+                        LinkedIn
+                    </span>
+
+                    <a
+                        href="https://www.linkedin.com/in/sachinu13/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        linkedin.com/in/sachinu13
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PHONE -->
+
+            <div class="info-card">
+
+                <div class="icon">
+                    PH
+                </div>
+
+                <div>
+
+                    <span>
+                        Phone
+                    </span>
+
+                    <a href="tel:+919878700434">
+
+                        +91 9878700434
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             CONTACT FORM
+        ========================== -->
+
+        <div class="contact-form-container">
+
+
+            <!-- TERMINAL HEADER -->
+
+            <div class="form-top">
+
+                <span class="dot red"></span>
+
+                <span class="dot yellow"></span>
+
+                <span class="dot green"></span>
+
+                <span>
+                    message@contact
+                </span>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form
+                id="contactForm"
+                action="/contact"
+                method="POST">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        autocomplete="name"
+                        required>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="your@email.com"
+                        autocomplete="email"
+                        required>
+
+                </div>
+
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Internship / Project / Collaboration">
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="Write your message..."
+                        required></textarea>
+
+                </div>
+
+
+
+                <!-- SEND BUTTON -->
+
+                <button
+                    type="submit"
+                    class="send-btn">
+
+                    Send Message →
+
+                </button>
+
+
+
+                <!-- FLASK MESSAGE -->
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+
+                    {% if messages %}
+
+                        <div class="flash-messages">
+
+                            {% for category, message in messages %}
+
+                                <p class="flash {{ category }}">
+                                    {{ message }}
+                                </p>
+
+                            {% endfor %}
+
+                        </div>
+
+                    {% endif %}
+
+                {% endwith %}
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BOTTOM
+    ========================== -->
+
+    <section class="contact-bottom">
+
+        <p>
+
+            <span>&gt;</span>
+
+            Open to internships, projects and collaborations.
+
+        </p>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Sachin</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/projects.css') }}">
+
+</head>
+
+<body>
+
+<!-- =========================================
+     CYBER BACKGROUND
+========================================= -->
+
+<canvas id="projectsCanvas"></canvas>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar">
+
+    <a href="/" class="logo">
+        <span>&lt;</span> Sachin <span>/&gt;</span>
+    </a>
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/about">About</a>
+
+        <a href="/skills">Skills</a>
+
+        <a href="/projects" class="active">
+            Projects
+        </a>
+
+        <a href="/certifications">
+            Certifications
+        </a>
+
+        <a href="/experience">
+            Experience
+        </a>
+
+        <a href="/contact">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================
+     PROJECT PAGE
+========================================= -->
+
+<main class="projects-page">
+
+
+    <!-- HEADER -->
+
+    <section class="projects-header">
+
+        <p class="terminal-line">
+            &gt; ls projects/
+        </p>
+
+        <h1>
+            My <span>Projects</span>
+        </h1>
+
+        <p class="intro">
+            Practical cybersecurity and software projects
+            built while learning and experimenting.
+        </p>
+
+    </section>
+
+
+    <!-- =========================================
+         PROJECT GRID
+    ========================================= -->
+
+    <section class="projects-grid">
+
+
+        <!-- =====================================
+             FACE LOCK
+        ====================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="{{ url_for('static', filename='images/projects/Face Lock/f1.jpeg') }}"
+                    alt="Face Lock Project">
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="project-number">
+                    01
+                </span>
+
+                <h2>
+                    Face Lock
+                </h2>
+
+                <p>
+                    A face-recognition based application
+                    lock built using Python, Flask,
+                    OpenCV and face recognition.
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>OpenCV</span>
+                    <span>Face Recognition</span>
+                    <span>Linux</span>
+
+                </div>
+
+
+                <!-- IMPORTANT -->
+
+                <button
+                    type="button"
+                    class="view-project"
+                    data-project="face-lock">
+
+                    View Project →
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================================
+             PASSWORD ANALYZER
+        ====================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="{{ url_for('static', filename='images/projects/Password Analyzer/p1.jpeg') }}"
+                    alt="Password Analyzer Project">
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="project-number">
+                    02
+                </span>
+
+                <h2>
+                    Password Analyzer
+                </h2>
+
+                <p>
+                    A password security application designed
+                    to analyze password strength and provide
+                    useful security recommendations.
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>Security</span>
+                    <span>Password Analysis</span>
+
+                </div>
+
+
+                <!-- IMPORTANT -->
+
+                <button
+                    type="button"
+                    class="view-project"
+                    data-project="password-analyzer">
+
+                    View Project →
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     PROJECT POPUP
+========================================= -->
+
+<div
+    id="projectModal"
+    class="project-modal"
+    aria-hidden="true">
+
+
+    <div
+        class="modal-box"
+        role="dialog"
+        aria-modal="true">
+
+
+        <!-- CLOSE -->
+
+        <button
+            type="button"
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close">
+
+            ×
+
+        </button>
+
+
+
+        <!-- HEADER -->
+
+        <div class="modal-header">
+
+            <span id="modalNumber">
+                01
+            </span>
+
+            <h2 id="modalTitle">
+                Face Lock
+            </h2>
+
+        </div>
+
+
+
+        <!-- IMAGE -->
+
+        <div class="modal-image-container">
+
+            <img
+                id="modalImage"
+                src=""
+                alt="Project Screenshot">
+
+        </div>
+
+
+
+        <!-- IMAGE CONTROLS -->
+
+        <div class="image-controls">
+
+            <button
+                type="button"
+                id="prevImage"
+                aria-label="Previous image">
+
+                ←
+
+            </button>
+
+
+            <span id="imageCounter">
+                1 / 5
+            </span>
+
+
+            <button
+                type="button"
+                id="nextImage"
+                aria-label="Next image">
+
+                →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- DESCRIPTION -->
+
+        <p
+            id="modalDescription"
+            class="modal-description">
+        </p>
+
+
+
+        <!-- TAGS -->
+
+        <div
+            id="modalTags"
+            class="modal-tags">
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="{{ url_for('static', filename='js/projects.js') }}"></script>
+
+</body>
+
+</html>
