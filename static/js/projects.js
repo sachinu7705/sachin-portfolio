@@ -296,7 +296,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
             ]
 
+        },
+
+        "bluetooth-car": {
+
+            number: "03",
+
+            title: "Bluetooth Controlled Car",
+
+            description:
+                "A Bluetooth controlled Arduino-based robotic car built using Arduino UNO, HC-05 Bluetooth module, L298N motor driver and DC motors. The project demonstrates wireless control, embedded programming and motor control.",
+
+            images: [
+
+                "/static/images/projects/car/C1.jpeg",
+
+                "/static/images/projects/car/C2.jpeg",
+
+                "/static/images/projects/car/C3.jpeg",
+
+                "/static/images/projects/car/C4.jpeg"
+
+            ],
+
+            tags: [
+
+                "Arduino UNO",
+                "HC-05 Bluetooth",
+                "L298N",
+                "DC Motors",
+                "Embedded Systems",
+                "Bluetooth"
+
+            ]
+
         }
+
 
     };
 
