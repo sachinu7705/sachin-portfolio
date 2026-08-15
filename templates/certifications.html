@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Certifications | Sachin</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/certifications.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         CYBER BACKGROUND
+    ========================== -->
+
+    <canvas id="cyberCanvas"></canvas>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <a href="/" class="logo">
+            <span>&lt;</span> Sachin <span>/&gt;</span>
+        </a>
+
+
+        <nav>
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+            <a href="/skills">
+                Skills
+            </a>
+
+            <a href="/projects">
+                Projects
+            </a>
+
+            <a href="/certifications"
+               class="active">
+                Certifications
+            </a>
+
+            <a href="/experience">
+                Experience
+            </a>
+
+            <a href="/contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="certifications-page">
+
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <section class="page-header">
+
+            <p class="terminal">
+                &gt; ls ~/certifications
+            </p>
+
+            <h1>
+                My <span>Certifications</span>
+            </h1>
+
+            <p>
+                Cybersecurity training, ethical hacking,
+                offensive security and professional learning
+                completed throughout my journey.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             CERTIFICATIONS GRID
+        ========================== -->
+
+        <section class="certifications-grid">
+
+
+            <!-- =====================================
+                 CERTIFICATE 01
+            ====================================== -->
+
+            <article class="certificate-card">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="{{ url_for(
+                            'static',
+                            filename='images/certifications/ethical-hacking.jpg'
+                        ) }}"
+                        alt="Learn Ethical Hacking From Scratch Certificate"
+                    >
+
+                    <div class="scan-line"></div>
+
+                    <button
+                        type="button"
+                        class="view-button"
+                        data-image="{{ url_for(
+                            'static',
+                            filename='images/certifications/ethical-hacking.jpg'
+                        ) }}">
+
+                        View Certificate →
+
+                    </button>
+
+                </div>
+
+
+                <div class="certificate-info">
+
+                    <span class="certificate-number">
+                        01
+                    </span>
+
+                    <h2>
+                        Learn Ethical Hacking From Scratch
+                    </h2>
+
+                    <h3>
+                        Udemy
+                    </h3>
+
+                    <p>
+                        Certificate of completion for the
+                        Learn Ethical Hacking From Scratch course,
+                        covering practical ethical hacking and
+                        cybersecurity fundamentals.
+                    </p>
+
+
+                    <div class="details">
+
+                        <span>
+                            Nov. 3, 2025
+                        </span>
+
+                        <span>
+                            15 Total Hours
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =====================================
+                 CERTIFICATE 02
+            ====================================== -->
+
+            <article class="certificate-card">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="{{ url_for(
+                            'static',
+                            filename='images/certifications/cyber-security-with-ai.jpg'
+                        ) }}"
+                        alt="Cyber Security with AI Certificate"
+                    >
+
+                    <div class="scan-line"></div>
+
+                    <button
+                        type="button"
+                        class="view-button"
+                        data-image="{{ url_for(
+                            'static',
+                            filename='images/certifications/cyber-security-with-ai.jpg'
+                        ) }}">
+
+                        View Certificate →
+
+                    </button>
+
+                </div>
+
+
+                <div class="certificate-info">
+
+                    <span class="certificate-number">
+                        02
+                    </span>
+
+                    <h2>
+                        Cyber Security with AI
+                    </h2>
+
+                    <h3>
+                        Internshala Trainings
+                    </h3>
+
+                    <p>
+                        Certificate program in Cyber Security
+                        with AI completed with Grade A through
+                        Internshala Trainings, Skill India and NSDC.
+                    </p>
+
+
+                    <div class="details">
+
+                        <span>
+                            Aug. 5, 2026
+                        </span>
+
+                        <span>
+                            Grade A
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =====================================
+                 CERTIFICATE 03
+            ====================================== -->
+
+            <article class="certificate-card">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="{{ url_for(
+                            'static',
+                            filename='images/certifications/offensive-security-operations.jpg'
+                        ) }}"
+                        alt="Offensive Security Operations Certificate"
+                    >
+
+                    <div class="scan-line"></div>
+
+                    <button
+                        type="button"
+                        class="view-button"
+                        data-image="{{ url_for(
+                            'static',
+                            filename='images/certifications/offensive-security-operations.jpg'
+                        ) }}">
+
+                        View Certificate →
+
+                    </button>
+
+                </div>
+
+
+                <div class="certificate-info">
+
+                    <span class="certificate-number">
+                        03
+                    </span>
+
+                    <h2>
+                        Offensive Security Operations
+                    </h2>
+
+                    <h3>
+                        Cybrary
+                    </h3>
+
+                    <p>
+                        Certificate of Continuing Education Completion
+                        for training in Offensive Security Operations,
+                        including 1 CEU/CPE and 2 hours of training.
+                    </p>
+
+
+                    <div class="details">
+
+                        <span>
+                            Aug. 13, 2026
+                        </span>
+
+                        <span>
+                            1 CEU/CPE
+                        </span>
+
+                        <span>
+                            2 Hours
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =====================================
+                 CERTIFICATE 04
+            ====================================== -->
+
+            <article class="certificate-card">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="{{ url_for(
+                            'static',
+                            filename='images/certifications/CAN_40679051_5617452-page-1.jpg'
+                        ) }}"
+                        alt="Cyber Security Certificate"
+                    >
+
+                    <div class="scan-line"></div>
+
+                    <button
+                        type="button"
+                        class="view-button"
+                        data-image="{{ url_for(
+                            'static',
+                            filename='images/certifications/CAN_40679051_5617452-page-1.jpg'
+                        ) }}">
+
+                        View Certificate →
+
+                    </button>
+
+                </div>
+
+
+                <div class="certificate-info">
+
+                    <span class="certificate-number">
+                        04
+                    </span>
+
+                    <h2>
+                        Cyber Security Program
+                    </h2>
+
+                    <h3>
+                        Internshala Trainings / Skill India
+                    </h3>
+
+                    <p>
+                        Certificate awarded for successfully
+                        completing a Cyber Security program with
+                        practical cybersecurity training.
+                    </p>
+
+
+                    <div class="details">
+
+                        <span>
+                            2026
+                        </span>
+
+                        <span>
+                            Cyber Security
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             SECURITY STATUS
+        ========================== -->
+
+        <section class="security-status">
+
+            <span class="status-dot"></span>
+
+            <span>
+                CERTIFICATION DATABASE: ONLINE
+            </span>
+
+            <span class="status-line">
+                //
+            </span>
+
+            <span>
+                04 VERIFIED
+            </span>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         CERTIFICATE MODAL
+    ========================== -->
+
+    <div
+        class="certificate-modal"
+        id="certificateModal"
+        aria-hidden="true"
+    >
+
+        <button
+            type="button"
+            class="close-button"
+            id="closeButton"
+            aria-label="Close certificate"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-frame">
+
+            <div class="modal-corner top-left"></div>
+            <div class="modal-corner top-right"></div>
+            <div class="modal-corner bottom-left"></div>
+            <div class="modal-corner bottom-right"></div>
+
+            <img
+                id="modalImage"
+                src=""
+                alt="Certificate preview"
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="{{ url_for(
+        'static',
+        filename='js/certifications.js'
+    ) }}"></script>
+
+
+</body>
+
+</html>
