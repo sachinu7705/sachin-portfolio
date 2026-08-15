@@ -1,0 +1,1151 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background: #020505;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
+   CYBER BACKGROUND
+========================================= */
+
+#cyberCanvas {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(0, 255, 149, 0.08),
+            transparent 35%
+        ),
+        #020505;
+}
+
+
+/* =========================================
+   GRID OVERLAY
+========================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 255, 149, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 149, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 75px;
+
+    padding: 0 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        rgba(2, 5, 5, 0.88);
+
+    backdrop-filter:
+        blur(14px);
+
+    border-bottom:
+        1px solid rgba(0, 255, 149, 0.15);
+
+    z-index: 1000;
+}
+
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    letter-spacing: -1px;
+}
+
+
+.logo span {
+
+    color: #00ff95;
+
+    text-shadow:
+        0 0 15px
+        rgba(0, 255, 149, 0.5);
+}
+
+
+.navbar nav {
+
+    display: flex;
+
+    gap: 22px;
+}
+
+
+.navbar nav a {
+
+    position: relative;
+
+    color: #777;
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.navbar nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: #00ff95;
+
+    box-shadow:
+        0 0 8px #00ff95;
+
+    transition:
+        width 0.3s ease;
+}
+
+
+.navbar nav a:hover,
+.navbar nav a.active {
+
+    color: #00ff95;
+
+    text-shadow:
+        0 0 10px
+        rgba(0, 255, 149, 0.45);
+}
+
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+
+    width: 100%;
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.certifications-page {
+
+    position: relative;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding:
+        135px 30px 80px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.page-header {
+
+    margin-bottom: 55px;
+
+    animation:
+        headerReveal 0.8s ease both;
+}
+
+
+@keyframes headerReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.terminal {
+
+    color: #00ff95;
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px
+        rgba(0, 255, 149, 0.4);
+}
+
+
+.page-header h1 {
+
+    font-size:
+        clamp(42px, 6vw, 70px);
+
+    letter-spacing: -4px;
+
+    margin-bottom: 15px;
+}
+
+
+.page-header h1 span {
+
+    color: #00ff95;
+
+    text-shadow:
+        0 0 25px
+        rgba(0, 255, 149, 0.25);
+}
+
+
+.page-header > p:last-child {
+
+    max-width: 700px;
+
+    color: #777;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CERTIFICATE GRID
+========================================= */
+
+.certifications-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================================
+   CERTIFICATE CARD
+========================================= */
+
+.certificate-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        rgba(7, 12, 12, 0.88);
+
+    border:
+        1px solid #1e2926;
+
+    border-radius: 10px;
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    animation:
+        cardReveal 0.8s ease forwards;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.certificate-card:nth-child(1) {
+
+    animation-delay:
+        0.15s;
+}
+
+
+.certificate-card:nth-child(2) {
+
+    animation-delay:
+        0.3s;
+}
+
+.certificate-card:nth-child(3) {
+    animation-delay: 0.45s;
+}
+@keyframes cardReveal {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.certificate-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00ff95,
+            transparent
+        );
+
+    transition:
+        left 0.8s ease;
+
+    z-index: 3;
+}
+
+
+.certificate-card:hover::before {
+
+    left: 130%;
+}
+
+
+.certificate-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(0, 255, 149, 0.55);
+
+    box-shadow:
+        0 20px 55px
+        rgba(0, 255, 149, 0.09);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.certificate-image {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio:
+        16 / 10;
+
+    overflow: hidden;
+
+    background: #080d0c;
+}
+
+
+.certificate-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(0, 0, 0, 0.75)
+        );
+
+    pointer-events: none;
+}
+
+
+.certificate-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+
+.certificate-card:hover
+.certificate-image img {
+
+    transform:
+        scale(1.045);
+
+    filter:
+        brightness(0.7);
+}
+
+
+/* =========================================
+   SCAN LINE ANIMATION
+========================================= */
+
+.scan-line {
+
+    position: absolute;
+
+    top: -20%;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 255, 149, 0.8),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 255, 149, 0.6);
+
+    opacity: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+.certificate-card:hover
+.scan-line {
+
+    opacity: 1;
+
+    animation:
+        scanCertificate 1.5s linear infinite;
+}
+
+
+@keyframes scanCertificate {
+
+    from {
+
+        top: 0%;
+    }
+
+    to {
+
+        top: 100%;
+    }
+}
+
+
+/* =========================================
+   VIEW BUTTON
+========================================= */
+
+.view-button {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 24px;
+
+    transform:
+        translate(-50%, 10px);
+
+    padding:
+        11px 20px;
+
+    color: #00ff95;
+
+    background:
+        rgba(2, 5, 5, 0.9);
+
+    border:
+        1px solid #00ff95;
+
+    border-radius: 5px;
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    z-index: 5;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.certificate-card:hover
+.view-button {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+.view-button:hover {
+
+    color: #020505;
+
+    background: #00ff95;
+
+    box-shadow:
+        0 0 25px
+        rgba(0, 255, 149, 0.45);
+}
+
+
+@media (max-width: 600px) {
+
+    .view-button {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+    }
+}
+
+
+/* =========================================
+   CERTIFICATE INFO
+========================================= */
+
+.certificate-info {
+
+    padding: 25px;
+}
+
+
+.certificate-number {
+
+    color: #00ff95;
+
+    font-family: monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.certificate-info h2 {
+
+    margin-top: 9px;
+
+    margin-bottom: 8px;
+
+    font-size: 20px;
+
+    line-height: 1.35;
+}
+
+
+.certificate-info h3 {
+
+    color: #00ff95;
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    font-weight: normal;
+
+    margin-bottom: 13px;
+}
+
+
+.certificate-info p {
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.details {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+
+.details span {
+
+    padding:
+        6px 9px;
+
+    color: #777;
+
+    background:
+        rgba(0, 255, 149, 0.025);
+
+    border:
+        1px solid #202b28;
+
+    border-radius: 4px;
+
+    font-family: monospace;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.security-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+    padding: 12px 16px;
+
+    color: #587069;
+
+    border-top:
+        1px solid #18221f;
+
+    border-bottom:
+        1px solid #18221f;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+.status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #00ff95;
+
+    box-shadow:
+        0 0 12px #00ff95;
+
+    animation:
+        statusPulse 1.5s infinite;
+}
+
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+
+        opacity: 1;
+    }
+
+    50% {
+
+        opacity: 0.3;
+    }
+}
+
+
+.status-line {
+
+    color: #263a34;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.certificate-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+    background:
+        rgba(0, 4, 3, 0.94);
+
+    backdrop-filter:
+        blur(10px);
+
+    z-index: 5000;
+
+    opacity: 0;
+}
+
+
+.certificate-modal.show {
+
+    display: flex;
+
+    animation:
+        modalFade 0.25s ease forwards;
+}
+
+
+@keyframes modalFade {
+
+    to {
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   MODAL FRAME
+========================================= */
+
+.modal-frame {
+
+    position: relative;
+
+    max-width: 95vw;
+
+    max-height: 90vh;
+
+    padding: 10px;
+
+    animation:
+        modalImageIn 0.35s ease;
+}
+
+
+@keyframes modalImageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.92)
+            rotateX(5deg);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotateX(0);
+    }
+}
+
+
+.certificate-modal img {
+
+    display: block;
+
+    max-width: 90vw;
+
+    max-height: 84vh;
+
+    object-fit: contain;
+
+    border:
+        1px solid #31423d;
+
+    box-shadow:
+        0 0 60px
+        rgba(0, 255, 149, 0.12);
+}
+
+
+/* =========================================
+   MODAL CORNERS
+========================================= */
+
+.modal-corner {
+
+    position: absolute;
+
+    width: 25px;
+
+    height: 25px;
+
+    border-color: #00ff95;
+
+    border-style: solid;
+
+    z-index: 2;
+}
+
+
+.top-left {
+
+    top: 0;
+    left: 0;
+
+    border-width:
+        2px 0 0 2px;
+}
+
+
+.top-right {
+
+    top: 0;
+    right: 0;
+
+    border-width:
+        2px 2px 0 0;
+}
+
+
+.bottom-left {
+
+    bottom: 0;
+    left: 0;
+
+    border-width:
+        0 0 2px 2px;
+}
+
+
+.bottom-right {
+
+    bottom: 0;
+    right: 0;
+
+    border-width:
+        0 2px 2px 0;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.close-button {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 30px;
+
+    width: 45px;
+
+    height: 45px;
+
+    color: #aaa;
+
+    background:
+        rgba(0, 0, 0, 0.5);
+
+    border:
+        1px solid #333;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5001;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.close-button:hover {
+
+    color: #00ff95;
+
+    border-color: #00ff95;
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar nav {
+
+        display: none;
+    }
+
+
+    .certifications-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .certifications-page {
+
+        padding:
+            115px 20px 60px;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 43px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .certificate-info {
+
+        padding: 20px;
+    }
+
+
+    .certificate-modal {
+
+        padding: 15px;
+    }
+
+
+    .close-button {
+
+        top: 12px;
+
+        right: 12px;
+    }
+
+
+    .security-status {
+
+        flex-wrap: wrap;
+
+        line-height: 1.6;
+    }
+
+}
+@media (max-width: 1100px) {
+
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .certifications-page {
+        padding: 115px 20px 60px;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .certificate-info {
+        padding: 20px;
+    }
+
+    .certificate-modal {
+        padding: 15px;
+    }
+
+    .close-button {
+        top: 12px;
+        right: 12px;
+    }
+
+    .security-status {
+        flex-wrap: wrap;
+        line-height: 1.6;
+    }
+
+}
