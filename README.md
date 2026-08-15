@@ -173,7 +173,7 @@ Examples include:
 
 - Cybersecurity Training
 - Ethical Hacking
-- Google Cybersecurity learning
+- Offensive Security Operations
 
 ---
 
