@@ -298,9 +298,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
         },
 
-        "bluetooth-car": {
+        "reconsuite-lite": {
 
             number: "03",
+
+            title: "ReconSuite Lite",
+
+            description:
+                "ReconSuite Lite is a Linux-based reconnaissance and security assessment toolkit. It provides a unified workflow for information gathering, network discovery and authorized security testing.",
+
+            images: [
+
+                "/static/images/projects/ReconSuite%20Lite/ReconSuite%20Lite%201.png",
+                "/static/images/projects/ReconSuite%20Lite/ReconSuite%20Lite%202.png",
+                "/static/images/projects/ReconSuite%20Lite/ReconSuite%20Lite%203.png",
+                "/static/images/projects/ReconSuite%20Lite/ReconSuite%20Lite%204.png",
+                "/static/images/projects/ReconSuite%20Lite/ReconSuite%20Lite%205.png"
+
+            ],
+
+            tags: [
+
+                "Python",
+                "Linux",
+                "Flask",
+                "Nmap",
+                "Reconnaissance",
+                "Cybersecurity"
+
+            ]
+
+        },
+
+        "bluetooth-car": {
+
+            number: "04",
 
             title: "Bluetooth Controlled Car",
 
